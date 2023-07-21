@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    width: 250px;
+  }
+
+  .button-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .spacer {
+    margin: 0 10px; /* You can adjust the margin value as needed */
+  }

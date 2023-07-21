@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "834cd045-e800-477d-913f-43d4f4210ab0",
+		"name": "Wallet API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"AccountNumber\": \"1\",\r\n    \"AccountHolderName\": \"Musa Dev\",\r\n    \"InitialBalance\": 1000,\r\n    \"Password\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7274/api/Auth/CreateAccount",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"Auth",
+						"CreateAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"AccountNumber\": \"1\",\r\n    \"Password\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7274/api/Auth/Login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"Auth",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccountData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7274/api/Auth/GetAccountData?id=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7274",
+					"path": [
+						"api",
+						"Auth",
+						"GetAccountData"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction History",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7267/api/Account/1/TransactionHistory",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7267",
+					"path": [
+						"api",
+						"Account",
+						"1",
+						"TransactionHistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account Balance",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7267/api/Account/1/Balance",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7267",
+					"path": [
+						"api",
+						"Account",
+						"1",
+						"Balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit Account",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"AccountId\": 0,\r\n    \"Amount\": 50000.00,\r\n    \"Type\": \"\",\r\n    \"TransactionDate\": \"2023-07-25T10:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7267/api/Account/1/Credit",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7267",
+					"path": [
+						"api",
+						"Account",
+						"1",
+						"Credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debit Account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBY2NvdW50SWQiOiIxIiwibmJmIjoxNjg5NjkzODg3LCJleHAiOjE2ODk3ODAyODcsImlhdCI6MTY4OTY5Mzg4NywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3NjgyLyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NzY4Mi8ifQ.Cp0JoTcX0-Hk6PRERKs1tI-vwBvVIzsHxdWMc3S3VOk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"AccountId\": 1,\r\n  \"Amount\": 500,\r\n  \"Type\": \"Debit\",\r\n  \"TransactionDate\": \"2023-07-20T10:30:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7267/api/Account/1/Debit",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7267",
+					"path": [
+						"api",
+						"Account",
+						"1",
+						"Debit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

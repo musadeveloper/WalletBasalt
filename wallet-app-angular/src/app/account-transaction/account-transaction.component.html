@@ -1,0 +1,29 @@
+<ng-container *ngIf="transactionHistory">
+    <table mat-table [dataSource]="transactionHistory.transactions">
+      <ng-container matColumnDef="transactionId">
+        <th mat-header-cell *matHeaderCellDef>Transaction ID</th>
+        <td mat-cell *matCellDef="let transaction">{{ transaction.transactionId }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let transaction"> R {{ transaction.amount }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let transaction">{{ transaction.type }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="transactionDate">
+        <th mat-header-cell *matHeaderCellDef>Transaction Date</th>
+        <td mat-cell *matCellDef="let transaction">{{ transaction.transactionDate | date }}</td>
+      </ng-container>
+  
+      <!-- Add more table columns based on your TransactionModel -->
+  
+      <tr mat-header-row *matHeaderRowDef="['transactionId', 'amount', 'type', 'transactionDate']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['transactionId', 'amount', 'type', 'transactionDate']"></tr>
+    </table>
+  </ng-container>
+  

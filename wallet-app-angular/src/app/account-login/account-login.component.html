@@ -1,0 +1,18 @@
+<div class="app-container">
+  <h1>Basalt Wallet</h1>
+  <div class="account-login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field class="form-group">
+        <mat-label for="accountNumber">Account Number:</mat-label>
+        <input matInput type="text" id="accountNumber" name="accountNumber" [(ngModel)]="loginModel.accountNumber" required>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <mat-label for="password">Password:</mat-label>
+        <input matInput type="password" id="password" name="password" [(ngModel)]="loginModel.password" required>
+      </mat-form-field>
+      <button mat-raised-button type="submit">Login</button>
+    </form>
+    <button mat-raised-button (click)="navigateToAccountCreation()">Register</button>
+  </div>
+</div>

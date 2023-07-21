@@ -1,0 +1,33 @@
+<mat-sidenav-container class="container">
+   
+    <mat-sidenav #sidenav mode="side" >
+      <mat-nav-list>
+        
+        <a mat-list-item (click)="navigateToBalance()" routerLink="/account-home/account-balance" routerLinkActive="active">View Balance</a>
+        <a mat-list-item (click)="navigateToCredit()" routerLink="/account-home/account-credit" routerLinkActive="active">Credit Account</a>
+        <a mat-list-item (click)="navigateToDebit()" routerLink="/account-home/account-debit" routerLinkActive="active">Debit Account</a>
+        <a mat-list-item (click)="navigateToTransactions()" routerLink="/account-home/account-transactions" routerLinkActive="active">Transaction History</a>
+        
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    
+    <mat-sidenav-content>
+      <mat-toolbar color="black">
+       
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+  
+       
+        <span class="app-title">My Basalt Wallet</span>
+         <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+      </mat-toolbar>
+  
+      
+      <div class="content">
+        
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

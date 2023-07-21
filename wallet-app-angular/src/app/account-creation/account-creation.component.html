@@ -1,0 +1,26 @@
+<div class="app-container">
+  <h1>Basalt Wallet</h1>
+  <div class="account-creation-container">
+    <h2>Create an Account</h2>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field class="form-group">
+        <mat-label>Account Number:</mat-label>
+        <input matInput type="text" name="accountNumber" [(ngModel)]="newAccount.accountNumber" required>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <mat-label>Account Holder Name:</mat-label>
+        <input matInput type="text" name="accountHolderName" [(ngModel)]="newAccount.accountHolderName" required>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <mat-label>Initial Balance:</mat-label>
+        <input matInput type="number" name="initialBalance" [(ngModel)]="newAccount.initialBalance" required>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <mat-label>Password:</mat-label>
+        <input matInput type="password" name="password" [(ngModel)]="newAccount.password" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Create Account</button>
+    </form>
+    <button mat-raised-button (click)="navigateToAccountLogin()">Login</button>
+  </div>
+</div>

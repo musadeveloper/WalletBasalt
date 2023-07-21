@@ -1,0 +1,17 @@
+<div class="container">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Debit Account</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="form" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-label>Amount to Debit (ZAR)</mat-label>
+            <input matInput type="number" name="amount" [(ngModel)]="amount" required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Debit</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

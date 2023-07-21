@@ -1,0 +1,16 @@
+version: '2.19.1'
+
+services:
+  authentication-service:
+    build:
+      context: ./Authentication Service
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+
+  account-service:
+    build:
+      context: ./Account Service
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80"
